@@ -1,38 +1,20 @@
 Ext.define('QuickStart.view.main.Main', {
     extend: 'Ext.tab.Panel',
-    controller: 'listview',
+
+    require: ['QuickStart.view.main.CharityListView'],
 
     items: [{
         title: 'Employee Directory',
-        xtype: 'grid',
-        iconCls: 'x-fa fa-users',
-        grouped: true,
-        listeners: {
-            itemtap: 'onPopupForm'
-        },
-        store: {
-            type: 'employees',
-            autoLoad: true,
-            sorters: ['firstName', 'lastName', 'officeLocation'],
-            grouper: 'officeLocation'
-        },
-        columns: [{
-            text: 'First Name',
-            dataIndex: 'firstName',
-            flex: 1
-        }, {
-            text: 'Last Name',
-            dataIndex: 'lastName',
-            flex: 1
-        }, {
-            text: 'Phone Number',
-            dataIndex: 'phoneNumber',
-            flex: 1
-        }]
+        xtype: 'employeelistview',
     }, {
-        title: "Charity List",
+        title: "Charity Directory",
         padding: 20,
         iconCls: 'x-fa fa-legal',
+        layout: {
+            type: 'vbox',
+            align : 'stretch',
+            pack  : 'start',
+        },
         items: [
             {
                 padding: 20,
@@ -41,31 +23,12 @@ Ext.define('QuickStart.view.main.Main', {
             },
             {
                 padding: 20,
+                xtype: 'label',
                 html: 'This is another item'
             },
             {
-                title: 'Charity Directory',
-                xtype: 'grid',
-                store: {
-                    type: 'charities',
-                    autoLoad: true,
-                    sorters: ['name', 'description'],
-                },
-                columns: [{
-                    text: 'Name',
-                    dataIndex: 'name',
-                    flex: 2
-                }, {
-                    text: 'EIN',
-                    dataIndex: 'ein',
-                    flex: 1
-                }, {
-                    text: 'Description',
-                    dataIndex: 'description',
-                    flex: 5
-                }],
-                width: 700,
-                height: 400,
+                title: 'Charity List',
+                xtype: 'charitylistview'
             }
         ]
     }, {

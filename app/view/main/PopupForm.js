@@ -1,3 +1,6 @@
+/**
+ * A form that displays employee information
+ */
 Ext.define('QuickStart.view.main.PopupForm', {
     extend: 'Ext.form.Panel',
     xtype: 'popupform',
@@ -5,10 +8,7 @@ Ext.define('QuickStart.view.main.PopupForm', {
 
     title: 'Update Record',
 
-    floating: true,
-    centered: true,
-    modal: true,
-
+    bodyPadding: 10,
     items: [{
         xtype: 'textfield',
         name: 'firstname',
@@ -26,25 +26,7 @@ Ext.define('QuickStart.view.main.PopupForm', {
         label: 'Phone Number',
         bind: '{employee.phoneNumber}'
 
-    }, {
-        xtype: 'selectfield',
-        name: 'office',
-        label: 'Office Location',
-        bind: '{employee.officeLocation}',
-        options: [{
-            text: "Redwood City, CA",
-            value: 'rwcca'
-        }, {
-            text: "Lawrence, KS",
-            value: 'lk'
-        }, {
-            text: "Frederick, MD",
-            value: 'fmd'
-        }],
-        defaultTabletPickerConfig: {
-            height: 200
-        }
-    }, {
+    },{
         xtype: 'toolbar',
         docked: 'bottom',
         items: ['->', {
@@ -58,5 +40,6 @@ Ext.define('QuickStart.view.main.PopupForm', {
             iconCls: 'x-fa fa-close',
             handler: 'cancelUpdate'
         }]
-    }]
+    }],
+    renderTo: Ext.getBody()
 });
