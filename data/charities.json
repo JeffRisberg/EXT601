@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Red Cross",
+    "ein": "93-5671234",
+    "description": "Disaster Relief"
+  },
+  {
+    "name": "ASPCA",
+    "ein": "13-1623829",
+    "description": "Protect animals"
+  },
+  {
+    "name": "United Way",
+    "ein": "46-3432138",
+    "description": "General relief"
+  },
+  {
+    "name": "Stanford University",
+    "ein": "51-5676432",
+    "description": "Educate students"
+  }
+]

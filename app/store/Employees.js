@@ -4,6 +4,6 @@ Ext.define('QuickStart.store.Employees', {
 
     proxy: {
         type: 'ajax',
-        url: 'data/data.json'
+        url: 'data/employees.json'
     }
 });
