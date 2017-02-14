@@ -3,18 +3,16 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
-Ext.define('AppName.Application', {
+Ext.define('QuickStart.Application', {
     extend: 'Ext.app.Application',
-    
-    name: 'AppName',
 
-    stores: [
-        // TODO: add global / shared stores here
-    ],
-    
-    launch: function () {
-        // TODO - Launch the application
-    },
+    name: 'QuickStart',
+
+    // The application is launched using the mainView config in app.js
+    //
+    // launch: function () {
+    //     Implement this method to do a custom launch.
+    // },
 
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',

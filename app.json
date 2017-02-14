@@ -2,7 +2,7 @@
     /**
      * The application's namespace.
      */
-    "name": "AppName",
+    "name": "QuickStart",
     
     /**
      * The version of the application.
@@ -21,8 +21,7 @@
      * application resides (the same folder in which this file is located).
      */
     "classpath": [
-        "app",
-        "${toolkit.name}/src"
+        "app"
     ],
 
     /**
@@ -33,18 +32,24 @@
      * in the "override" property is also included.
      */
     "overrides": [
-        "overrides",
-        "${toolkit.name}/overrides"
+        "overrides"
     ],
 
     /**
      * The Sencha Framework for this application: "ext" or "touch".
      */
     "framework": "ext",
-    
-    
-    
-    
+
+    /**
+     * The toolkit to use. Select either "classic" or "modern".
+     */
+    "toolkit": "modern",
+
+    /**
+     * The name of the theme for this application.
+     */
+    "theme": "theme-material",
+
     /**
      * The list of required packages (with optional versions; default is "latest").
      *
@@ -76,29 +81,13 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "AppName.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "AppName.view" then
+         * sass/src and sass/var directories. For example, "QuickStart.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "QuickStart.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "AppName.view.Foo" to "sass/src/AppName/view/Foo.scss".
+         * "QuickStart.view.Foo" to "sass/src/QuickStart/view/Foo.scss".
          */
-        "namespace": "AppName",
-
-        /**
-         * Generated sass source settings
-         *
-         *      "generated": {
-         *         // The file used to save sass variables edited via Sencha Inspector and Sencha Themer.
-         *         // This file will automatically be applied to the end of the scss build.
-         *         "var": "sass/save.scss",
-         *      
-         *         // The directory used to save generated sass sources.
-         *         // This directory will automatically be applied to the end of the scss build.
-         *         "src": "sass/save"
-         *      }
-         *
-         */
-         
+        "namespace": "QuickStart",
 
         /**
          * Comma-separated list of files or folders containing extra Sass. These
@@ -120,8 +109,7 @@
          *      +-----------------+
          */
         "etc": [
-            "sass/etc/all.scss",
-            "${toolkit.name}/sass/etc/all.scss"
+            "sass/etc/all.scss"
         ],
 
         /**
@@ -146,8 +134,7 @@
          */
         "var": [
             "sass/var/all.scss",
-            "sass/var",
-            "${toolkit.name}/sass/var"
+            "sass/var"
         ],
 
         /**
@@ -167,8 +154,7 @@
          *      +-----------------+
          */
         "src": [
-            "sass/src",
-            "${toolkit.name}/sass/src"
+            "sass/src"
         ]
     },
 
@@ -215,35 +201,13 @@
      */
     "js": [
         {
+            "path": "${framework.dir}/build/ext-modern-all-debug.js"
+        },
+        {
             "path": "app.js",
             "bundle": true
         }
     ],
-
-    
-    /**
-     * Settings specific to classic toolkit builds.
-     */
-    "classic": {
-        "js": [
-            // Remove this entry to individually load sources from the framework.
-            {
-                "path": "${framework.dir}/build/ext-all-rtl-debug.js"
-            }
-        ]
-    },
-
-    /**
-     * Settings specific to modern toolkit builds.
-     */
-    "modern": {
-        "js": [
-            // Remove this entry to individually load sources from the framework.
-            {
-                "path": "${framework.dir}/build/ext-modern-all-debug.js"
-            }
-        ]
-    },
 
     /**
      * List of all CSS assets in the right inclusion order.
@@ -333,9 +297,7 @@
      * Settings specific to development builds.
      */
     "development": {
-        "watch": {
-            "delay": 250
-        }
+        "tags": []
     },
 
     /**
@@ -367,9 +329,6 @@
      */
     "bootstrap": {
         "base": "${app.dir}",
-        
-        "manifest": "${build.id}.json",
-        
         "microloader": "bootstrap.js",
         "css": "bootstrap.css"
     },
@@ -401,10 +360,6 @@
      *              "enable": "${app.output.microloader.enable}"
      *          },
      *          "resources": "resources",
-     *          "slicer": {
-     *              "path": "${app.output.resources}/images",
-     *              "enable": false
-     *          },
      *          // Setting the "enable" property of this object to a Truthy value will cause a Application Cache
      *          // manifest file to be generated based on this files appCache object. This file will then be injected
      *          // into the index.html file of the built application
@@ -414,21 +369,12 @@
      *      }
      *
      */
-    
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "page": "index.html",
-        "manifest": "${build.id}.json",
-        "js": "${build.id}/app.js",
         "appCache": {
             "enable": false
-        },
-        "resources": {
-            "path": "${build.id}/resources",
-            "shared": "resources"
         }
     },
-    
     
     /**
     * Controls for localStorage caching
@@ -445,12 +391,10 @@
     *       "deltas": "deltas"
     *   }
     */
-    
     "cache": {
         "enable": false,
-        "deltas": "${build.id}/deltas"
+        "deltas": true
     },
-    
 
     /**
      * Used to automatically generate cache.manifest (HTML 5 application cache manifest)
@@ -483,76 +427,9 @@
         {
             "path": "resources",
             "output": "shared"
-        },
-        {
-            "path": "${toolkit.name}/resources"
-        },
-        {
-            "path": "${build.id}/resources"
         }
     ],
 
-    /**
-     * Directory path to store all previous production builds. Note that the content
-     * generated inside this directory must be kept intact for proper generation of
-     * deltas between updates.
-     */
-    
-    "archivePath": "archive/${build.id}",
-    
-
-
-
-    /**
-     * Build Profiles. This object's properties are each a "build profile". You can
-     * add as many as you need to produce optimized builds for devices, themes, locales
-     * or other criteria. Your "Ext.beforeLoad" hook (see index.html) is responsible for
-     * selecting the desired build profile by setting "Ext.manifest" to one of these
-     * names.
-     *
-     *     "builds": {
-     *         "classic": {
-     *             "toolkit": "classic",
-     *             "theme": "theme-neptune"
-     *         },
-     *
-     *         "modern": {
-     *             "toolkit": "modern",
-     *             "theme": "theme-neptune"
-     *         }
-     *     }
-     *
-     */
-    
-    "builds": {
-        "classic": {
-            "toolkit": "classic",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                "generated": {
-                    "var": "classic/sass/save.scss",
-                    "src": "classic/sass/save"
-                }
-            }
-        },
-
-        "modern": {
-            "toolkit": "modern",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                "generated": {
-                    "var": "modern/sass/save.scss",
-                    "src": "modern/sass/save"
-                }
-            }
-        }
-    },
-    
-    
     /**
      * File / directory name patttern to ignore when copying to the builds. Must be a
      * valid regular expression.
@@ -562,8 +439,15 @@
     ],
 
     /**
+     * Directory path to store all previous production builds. Note that the content
+     * generated inside this directory must be kept intact for proper generation of
+     * deltas between updates.
+     */
+    "archivePath": "archive",
+
+    /**
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "66835cfd-43be-4497-8f7e-c5867d800b41"
+    "id": "9b26bc93-57e1-4173-910f-d75951525cfc"
 }
