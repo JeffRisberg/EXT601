@@ -1,4 +1,4 @@
-Ext.define('QuickStart.view.main.CharityListView', {
+Ext.define('EXT601.view.main.CharityListView', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.charitylistview',
 

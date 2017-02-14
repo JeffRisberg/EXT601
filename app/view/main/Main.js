@@ -1,11 +1,14 @@
-Ext.define('QuickStart.view.main.Main', {
+Ext.define('EXT601.view.main.Main', {
     extend: 'Ext.tab.Panel',
 
-    require: ['QuickStart.view.main.CharityListView'],
+    require: [
+        'EXT601.view.main.CharityListView',
+        'EXT601.view.main.EmployeeListView'
+    ],
 
     items: [{
         title: 'Employee Directory',
-        xtype: 'employeelistview',
+        xtype: 'employeelistview'
     }, {
         title: "Charity Directory",
         padding: 20,
@@ -13,7 +16,7 @@ Ext.define('QuickStart.view.main.Main', {
         layout: {
             type: 'vbox',
             align : 'stretch',
-            pack  : 'start',
+            pack  : 'start'
         },
         items: [
             {

@@ -1,7 +1,7 @@
 /**
  * A form that displays employee information
  */
-Ext.define('QuickStart.view.main.PopupForm', {
+Ext.define('EXT601.view.main.PopupForm', {
     extend: 'Ext.form.Panel',
     xtype: 'popupform',
     controller: 'popupform',

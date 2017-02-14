@@ -1,7 +1,7 @@
 /**
  * A ViewController for the popup form which handles posting of changes back to store.
  */
-Ext.define('QuickStart.view.main.PopupFormController', {
+Ext.define('EXT601.view.main.PopupFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.popupform',
 

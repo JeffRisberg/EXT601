@@ -1,4 +1,4 @@
-Ext.define('QuickStart.store.Employees', {
+Ext.define('EXT601.store.Employees', {
     extend: 'Ext.data.Store',
     alias: 'store.employees',
 

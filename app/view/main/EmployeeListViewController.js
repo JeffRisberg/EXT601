@@ -1,7 +1,7 @@
 /**
  * A ViewController for the employee list which popups the form.
  */
-Ext.define('QuickStart.view.main.EmployeeListViewController', {
+Ext.define('EXT601.view.main.EmployeeListViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.employeelistview',
 

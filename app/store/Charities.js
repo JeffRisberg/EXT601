@@ -1,4 +1,4 @@
-Ext.define('QuickStart.store.Charities', {
+Ext.define('EXT601.store.Charities', {
     extend: 'Ext.data.Store',
     alias: 'store.charities',
 

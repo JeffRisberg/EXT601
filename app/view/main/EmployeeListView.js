@@ -1,4 +1,4 @@
-Ext.define('QuickStart.view.main.EmployeeListView', {
+Ext.define('EXT601.view.main.EmployeeListView', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.employeelistview',
 

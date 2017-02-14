@@ -2,7 +2,7 @@
     /**
      * The application's namespace.
      */
-    "name": "QuickStart",
+    "name": "EXT601",
     
     /**
      * The version of the application.
@@ -81,13 +81,13 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "QuickStart.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "QuickStart.view" then
+         * sass/src and sass/var directories. For example, "EXT601.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "EXT601.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "QuickStart.view.Foo" to "sass/src/QuickStart/view/Foo.scss".
+         * "EXT601.view.Foo" to "sass/src/EXT601/view/Foo.scss".
          */
-        "namespace": "QuickStart",
+        "namespace": "EXT601",
 
         /**
          * Comma-separated list of files or folders containing extra Sass. These

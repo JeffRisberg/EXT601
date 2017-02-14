@@ -1,7 +1,7 @@
 /**
  * A ViewController for the charity list which popups the form.
  */
-Ext.define('QuickStart.view.main.CharityListViewController', {
+Ext.define('EXT601.view.main.CharityListViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.charitylistview',
 
